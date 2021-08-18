@@ -29,5 +29,5 @@
 ## mindmapの作成
 ## 卒業制作のシステム構造
 ## LibROSAチュートリアルを一通りコードを書く
-CoreIO and DSP(Audio loading - Harmonic)の内容は8月13日までには終わらせる
+CoreIO and DSP(Audio loading - Harmonic)の内容は8月13日までには終わらせる<br>
 CoreIO and DSP(Magnitude scaling - Miscellaneous)の内容は8月22日までには終わらせる
