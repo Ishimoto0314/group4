@@ -31,3 +31,10 @@
 ## LibROSAチュートリアルを一通りコードを書く
 CoreIO and DSP(Audio loading - Harmonic)の内容は8月13日までには終わらせる<br>
 CoreIO and DSP(Magnitude scaling - Miscellaneous)の内容は8月22日までには終わらせる
+# sprint5のアウトプット
+## 課題
+- 「ゼロつく」を進める（石本）
+- マイク入力のプログラムを書く（角田）
+- librosaの「特徴抽出」を理解する（大坪）
+## LibROSAチュートリアルを進める
+「Core IO and DSP」を終わらせる
