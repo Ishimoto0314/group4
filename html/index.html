@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ベースギターの自動採譜アプリ</title>
+
+	<style>
+		
+		.container {
+  width: 1000px; /*必要な幅に設定*/
+  margin: auto; /*ブラウザ中央に配置*/
+}
+.container:after { /*clearfix設定*/
+  content:"";
+  display:block;
+  clear:both;
+}
+.left_wrap {
+  width: 49%; /*左カラム幅設定*/
+  float: left; /*左にフロート配置*/
+}
+.right_wrap {
+  width: 49%; /*右カラム幅設定*/
+  float: right; /*右のフロート配置*/
+}
+
+@media (min-width: 600px) {
+  #parent {
+    display: flex;
+  }
+  #child1 {
+    flex-grow: 1;
+  }
+  #child2 {
+    flex-grow: 1;
+  }
+}
+
+.upload-label {
+  display: inline-block;
+  cursor: pointer; /* カーソルを指に */
+  margin: 1em 0; /* まわりの余白 */
+  padding: .7em 1em; /* 文字まわりの余白 */
+  line-height: 1.4; /* 行間 */
+  background: #3e8bff; /* 背景色 */
+  color: #FFF; /* 文字色 */
+  font-size: 1.2em; /* フォントサイズ */
+  border-radius: 2.5em; /* 角の丸み */
+  transition: 0.2s; /* ホバーをなめらかに */
+}
+/* ホバー時 */
+.upload-label:hover {
+  box-shadow: 0 8px 10px -2px rgba(0, 0, 0, 0.2); /* 影を表示 */
+}
+/* inputは隠す */
+.upload-label input {
+  display: none;
+}
+	</style>
+</head>
+<body>
+	<h1>ベースギターの自動採譜アプリ</h1>
+	<hr>
+
+
+	<div id="parent">
+	    <div id="child1">
+	    	<h2>ファイルがある場合</h2>
+	    	<label class="upload-label">
+	    		ファイルを選択
+				<input type="file" accept=".wav, .mp3">
+			</label>
+
+	    </div>
+	    <div id="child2">子要素２</div>
+  	</div>
+
+</body>
+</html>
