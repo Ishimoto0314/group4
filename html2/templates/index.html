@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+</head>
+<body>
+	<h1>test</h1>
+	<form method="post">
+		<input type="text" name="name" placeholder="ここに名前を入力してください">
+		<button type="submit">送信</button>
+	</form>
+
+	<br><br>
+	{% if name %}
+	<p>{{name}}</p>
+	{% endif %}
+</body>
+</html>
