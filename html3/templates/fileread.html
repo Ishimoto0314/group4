@@ -116,15 +116,16 @@ input[type="radio"]:checked + label {
 
 	    	<h2>ファイルがある場合</h2>
 	    	.wavまたは.mp3<br>
-	    	<form action="/fileread" method="post">
+	    	<form action="/fileread" method="post" enctype="multipart/form-data">
 
 					<input type="file" accept=".wav, .mp3" name="music">
 					<button type="submit">登録</button>
 			</form>
 
 			<br><br>
-			{% if name %}
-			{{name}}
+			{% if arrayInfo %}
+			ファイル名:{{arrayInfo[0]}}<br>
+			BPM:{{arrayInfo[1]}}
 			{% endif %}
 
 

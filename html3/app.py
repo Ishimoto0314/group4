@@ -3,6 +3,8 @@ import test
 import sys,os.path
 import subprocess
 import wave
+import tempo
+import numpy as np
 
 app = Flask(__name__)
 
@@ -26,7 +28,7 @@ def rokuon():
 		if request.form.get('rokuon'):
 			if request.form['rokuon'] == 'kaishi':
 				print("Start recording...")
-				cmd = "sox -t waveaudio -d audio\out.wav"
+				cmd = "sox -t waveaudio -d -r 44100 audio\out.wav"
 				global p
 				p = subprocess.Popen(cmd.split())
 
@@ -49,7 +51,9 @@ def fileread():
 	if request.method == 'POST':
 		file = request.files['music']
 		fileName = file.filename
-		return render_template('fileread.html', fileName = fileName)
+		bpm = np.round(tempo.tempo(file))
+		arrayInfo = [fileName, bpm]
+		return render_template('fileread.html', arrayInfo = arrayInfo)
 	return render_template('fileread.html')
 
 @app.route("/audio/<path:filename>")
