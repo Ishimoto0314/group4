@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ベースギターの自動採譜アプリ</title>
+	<link rel = "icon" type = "image/png" href = "img/top.png" />
+	<style>
+
+		.container {
+  width: 1000px; /*必要な幅に設定*/
+  margin: auto; /*ブラウザ中央に配置*/
+}
+.container:after { /*clearfix設定*/
+  content:"";
+  display:block;
+  clear:both;
+}
+.left_wrap {
+  width: 49%; /*左カラム幅設定*/
+  float: left; /*左にフロート配置*/
+}
+.right_wrap {
+  width: 49%; /*右カラム幅設定*/
+  float: right; /*右のフロート配置*/
+}
+
+@media (min-width: 600px) {
+  #parent {
+    display: flex;
+  }
+  #child1 {
+    flex-grow: 1;
+  }
+  #child2 {
+    flex-grow: 1;
+  }
+}
+
+.upload-label {
+  display: inline-block;
+  cursor: pointer; /* カーソルを指に */
+  margin: 1em 0; /* まわりの余白 */
+  padding: .7em 1em; /* 文字まわりの余白 */
+  line-height: 1.4; /* 行間 */
+  background: #3e8bff; /* 背景色 */
+  color: #FFF; /* 文字色 */
+  font-size: 1.6em; /* フォントサイズ */
+  border-radius: 2.5em; /* 角の丸み */
+  transition: 0.2s; /* ホバーをなめらかに */
+}
+
+.upload-label:checked + label {
+	background: #31A9EE;/* マウス選択時の背景色を指定する */
+	color: #ffffff; /* マウス選択時のフォント色を指定する */
+}
+/* ホバー時 */
+.upload-label:hover {
+  box-shadow: 0 8px 10px -2px rgba(0, 0, 0, 0.2); /* 影を表示 */
+}
+/* inputは隠す */
+.upload-label input {
+  display: none;
+}
+
+.upload-label button {
+  display: none;
+}
+
+.radio_css{
+	display: block;
+	float: left;
+	margin: 5px;
+	width: 70px;
+	height: 25px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: center;
+	border: 2px solid #006DD9;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.radio_css input {
+  display: none;
+}
+
+.radio_css:checked + label{
+	background-color: #D3D3D3;
+
+}
+
+.radio_css:hover{
+	background-color: #D3D3D3;
+}
+
+input[type="radio"]{
+	display: none;
+}
+
+input[type="radio"]:checked + label {
+	background: #D3D3D3;/* マウス選択時の背景色を指定する */
+	color: #ffffff; /* マウス選択時のフォント色を指定する */
+}
+
+
+.center {
+  text-align: center;
+}
+
+body {
+	counter-reset: StepNum 0;
+	counter-reset: ItemNum 0;
+	background-color: #e6fff7;
+	
+}
+
+h1 {
+	text-align:center;
+	font-size:4em;
+}
+
+
+.fonts{
+	font-size:1.5em;
+}
+
+.PageMain{
+	width: 35%;
+	margin: 0 auto;
+	padding: 0 .5em;
+	padding-top: .01em;
+	box-shadow: 1px 1px 4px;
+}
+	</style>
+
+</head>
+<body>
+	
+	<h1 style="text-align:center">ベースギターの自動採譜アプリ</h1>
+	<hr>
+
+	
+		<h2>wavまたはwebmを選択</h2>
+		<form action="/fileread" method="post" enctype="multipart/form-data">
+		<div class="fonts">
+	    		    	.wav.webm<br>
+	    	
+
+					<input type="file" accept=".wav, .webm" name="music">
+					
+			
+
+
+
+
+  	<br>
+  </div>
+  	<hr>
+  	<div>
+
+	
+			<label class="upload-label">
+				自動採譜開始
+				<input type="submit">
+			</label>
+		
+	</div>
+			</form>
+	<br>
+	<form action='/' method="get">
+		<button type="submit">戻る</button>
+
+	</form>
+
+
+</body>
+</html>
